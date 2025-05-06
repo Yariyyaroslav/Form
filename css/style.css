@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+:root {
+   --font-style: 'Nunito Sans', sans-serif;
+}
+
+:root {
+   --c-background: #a3a3c4;
+   --c-backgroundSecondary:#393942;
+   --c-textFirst: #fff;
+   --c-shadow: rgba(41, 18, 153, 0.7);
+   --c-textSecond: #e2dcff;
+   --c-register: #f4f3f5;
+   --c-formColor:#452a85;
+   --c-textHover:#261a30;
+   
+}
+
+:root.dark-theme {
+   --c-background: #131315;
+   --c-backgroundSecondary:#a3a3c4;
+   --c-textFirst: #fff;
+   --c-shadow: rgba(143, 124, 236, 0.7);
+   --c-textSecond: #8F7CEC;
+   --c-register: #CBBDDB;
+   --c-formColor:#18161d;
+   --c-textHover:#fff;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background: var(--c-background);
+   font-family: var(--font-style);
+}
+
+.login-box {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 400px;
+   padding: 40px;
+   transform: translate(-50%, -50%);
+   background: var(--c-formColor);
+   box-shadow: 0 15px 25px var(--c-shadow);
+   border-radius: 10px;
+}
+
+.login-box h2 {
+   margin: 0 0 30px;
+   padding: 0;
+   color: var(--c-textFirst);
+   text-align: center;
+}
+
+.login-box .user-box input {
+   position: relative;
+   width: 100%;
+   padding: 10px 0;
+   font-size: 16px;
+   color: var(--c-textFirst);
+   margin-bottom: 30px;
+   border: none;
+   border-bottom: 1px solid var(--c-textFirst);
+   outline: none;
+   background: transparent;
+}
+
+.login-box .user-box label {
+   position: relative;
+   left: 0;
+   top: -60px;
+   padding: 10px 0;
+   font-size: 16px;
+   color: var(--c-textFirst);
+   pointer-events: none;
+   transition: .5s;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+   top: -85px;
+   left: 0;
+   color: var(--c-textSecond);
+   font-size: 12px;
+}
+
+#submit {
+   font-weight: 700;
+   padding: 10px 20px;
+   color: var(--c-register);
+   font-size: 16px;
+   text-decoration: none;
+   text-transform: uppercase;
+   overflow: hidden;
+   transition: .5s;
+   letter-spacing: 4px;
+   border: 1px solid var(--c-textSecond);
+   margin: auto;
+}
+
+#submit:hover {
+   background: var(--c-textSecond);
+   color: var(--c-textHover);
+   border-radius: 5px;
+   box-shadow: 0 0 5px var(--c-shadow), 0 0 25px var(--c-shadow), 0 0 50px var(--c-shadow), 0 0 100px var(--c-shadow);
+}
+
+.button-form {
+   display: flex;
+   flex-direction: row;
+   margin-top: 20px;
+}
+
+#register {
+   font-size: 14px;
+   text-decoration: none;
+   color: var(--c-register);
+   margin: auto;
+   width: 60%;
+   text-align: center;
+}
+
+#register a {
+   margin: auto;
+   color: var(--c-textSecond);
+   text-decoration: none;
+}
+
+.theme-switcher {
+   max-width: 300px;
+   background-color: var(--c-backgroundSecondary);
+   border-radius: 10px;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   padding: 0 3px;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+   position: relative;
+   overflow: hidden;
+}
+
+.theme-switcher .slider {
+   display: block;
+   position: absolute;
+   z-index: 1;
+   width: calc((100% - 6px) / 2);
+   top: 3px;
+   -webkit-transform: translatex(-110%);
+   transform: translatex(-110%);
+   bottom: 3px;
+   border-radius: 6px;
+   -webkit-transition: 0.15s ease, -webkit-transform 0.25s ease-out;
+   transition: 0.15s ease, -webkit-transform 0.25s ease-out;
+   transition: 0.15s ease, transform 0.25s ease-out;
+   transition: 0.15s ease, transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+   background-color: var(--c-background);
+   -webkit-box-shadow: var(--c-shadow);
+   box-shadow: var(--c-shadow);
+}
+
+.theme-switcher input {
+   display: none;
+}
+
+.theme-switcher input:nth-of-type(1):checked~.slider {
+   -webkit-transform: translateX(0);
+   transform: translateX(0);
+}
+
+.theme-switcher input:nth-of-type(2):checked~.slider {
+   -webkit-transform: translateX(100%);
+   transform: translateX(100%);
+}
+
+.theme-switcher label {
+   position: relative;
+   z-index: 2;
+   width: 50%;
+   color: var(--c-textFirst);
+}
+
+.theme-switcher label span {
+   padding: 8px 0;
+   border-radius: 6px;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+   font-weight: 500;
+}
+
+.theme-switcher label svg {
+   display: inline-block;
+   margin-right: 0.5rem;
+   width: 20px;
+}
